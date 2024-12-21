@@ -1,7 +1,7 @@
 from flask import Flask, request
 import requests
 from API import Plataform
-from lib import BertModelFakeNews
+from fake_news_models import BertModelFakeNews
 
 app = Flask(__name__)
 API = Plataform()
