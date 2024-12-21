@@ -34,7 +34,3 @@ class BertModelFakeNews(Model):
             "FAKE": probs[0][0].item(),
             "REAL": probs[0][1].item()
         }
-    
-model = BertModelFakeNews()
-print(model.predict("Bolsonaro é fascista"))
-print(model.predict_proba("Bolsonaro é fascista"))
