@@ -5,9 +5,9 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 class BertModelFakeNews(Model):
     def __init__(self):
         #Carrega o modelo com Fine Tuning
-        self.__model = AutoModelForSequenceClassification.from_pretrained("../model_BERTimbau", num_labels=2)
+        self.__model = AutoModelForSequenceClassification.from_pretrained("model_BERTimbau", num_labels=2)
         self.__model.eval() #Modo avaliação
-        self.__tokenizer = AutoTokenizer.from_pretrained("../tokenizer_BERTimbau")
+        self.__tokenizer = AutoTokenizer.from_pretrained("tokenizer_BERTimbau")
 
     def _getEmbeddings(self, sentence:str):
         if not isinstance(sentence, str) or not sentence.strip():
