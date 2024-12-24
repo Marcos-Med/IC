@@ -1,6 +1,6 @@
 import joblib
 import torch
-from Model import Model
+from fake_news_models.Model import Model
 from transformers import AutoModel, AutoTokenizer
 
 class LRModelFakeNews(Model): #Classe que representa o Preditor de Notícias Falsas com Regressão Logística

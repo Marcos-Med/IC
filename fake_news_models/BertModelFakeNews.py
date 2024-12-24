@@ -1,4 +1,4 @@
-from Model import Model
+from fake_news_models.Model import Model
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 

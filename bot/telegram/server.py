@@ -1,7 +1,10 @@
 from flask import Flask, request
 import requests
 from API import Plataform
-from fake_news_models import BertModelFakeNews
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+from fake_news_models.BertModelFakeNews import BertModelFakeNews
 
 app = Flask(__name__)
 API = Plataform()
