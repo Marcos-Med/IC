@@ -4,9 +4,10 @@ services:
     env: python
     build:
       commands:
-        -curl -o model_BERTimbau/model.safetensors https://drive.google.com/file/d/1Tq0RydIdJ6qHUwrWKAz8P8h6zu0Ao_GG/view?usp=drive_link
-        -curl -o model_BERTimbau/config.json https://drive.google.com/file/d/1NyqP2RD8blWEaouRCiSJJiVf145L-cQM/view?usp=drive_link
-        -curl -o tokenizer_BERTimbau/vocab.txt https://drive.google.com/file/d/1-vNuRSo6vDhZYhjDwc2PhIlc3dQZFSbn/view?usp=drive_link
-        -curl -o tokenizer_BERTimbau/tokenizer_config.json https://drive.google.com/file/d/1IpacRV4iVFVzARti1-k3kJu71gLs6qgM/view?usp=drive_link
-        -curl -o tokenizer_BERTimbau/special_tokens_map.json https://drive.google.com/file/d/1tQNqk6T1dHvT6IEcM6M02ADfxuRM_Afs/view?usp=drive_link
+        - mkdir -p model_BERTimbau tokenizer_BERTimbau
+        - gdown "https://drive.google.com/uc?id=1Tq0RydIdJ6qHUwrWKAz8P8h6zu0Ao_GG&export=download" -O model_BERTimbau/model.safetensors
+        - gdown "https://drive.google.com/uc?id=1NyqP2RD8blWEaouRCiSJJiVf145L-cQM&export=download" -O model_BERTimbau/config.json
+        - gdown "https://drive.google.com/uc?id=1-vNuRSo6vDhZYhjDwc2PhIlc3dQZFSbn&export=download" -O tokenizer_BERTimbau/vocab.txt
+        - gdown "https://drive.google.com/uc?id=1IpacRV4iVFVzARti1-k3kJu71gLs6qgM&export=download" -O tokenizer_BERTimbau/tokenizer_config.json
+        - gdown "https://drive.google.com/uc?id=1tQNqk6T1dHvT6IEcM6M02ADfxuRM_Afs&export=download" -O tokenizer_BERTimbau/special_tokens_map.json
       startCommand: python bot/telegram/server.py 
