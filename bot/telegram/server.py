@@ -4,11 +4,11 @@ from API import Plataform
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-from fake_news_models.BertModelFakeNews import BertModelFakeNews
+from fake_news_models.LogisticModelFakeNews import LRModelFakeNews 
 
 app = Flask(__name__)
 API = Plataform()
-model = BertModelFakeNews()
+model = LRModelFakeNews()
 
 @app.route("/webhook", methods=['POST'])
 def webhook():
