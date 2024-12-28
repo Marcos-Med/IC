@@ -1,35 +1,30 @@
 from flask import Flask, request
-import requests
-from API import Plataform
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-from fake_news_models.LogisticModelFakeNews import LRModelFakeNews 
+from handlers import *
+import json
 
-app = Flask(__name__)
-API = Plataform()
-model = LRModelFakeNews()
+app = Flask(__name__) ## Instancia um server
 
-@app.route("/webhook", methods=['POST'])
+handlers = { #Comandos executados pelo BOT
+    "/start": StartHandler(),
+    "/prever": PredictHandler(),
+    "/help": HelpHendler()
+}
+
+@app.route("/webhook", methods=['POST']) #endpoint de comunicação
 def webhook():
     update = request.get_json()
+
+    # Log completo da atualização recebida
+    print(json.dumps(update, indent=4))
     if 'message' in update:
         id = update['message']['chat']['id']
         text = update['message']['text']
-        if text.startswith("/prever"):
-            news = text.replace("/prever", "").strip()
-            if news:
-                result = model.predict(news)
-                probs = model.predict_proba(news)
-                response = f"A notícia parece ser {result} com {(probs[result]*100):.2f}% de probalidade."
-            else:
-                response = "Por favor, envie a notícia após o comando /prever."
-            notify(id, response)
+        list = text.split()
+        if len(list) == 1: 
+            handlers[list[0]].response(id)
+        else:
+            handlers[list[0]].response(id, " ".join(list[1:]))
     return "OK", 200
-
-def notify(chat_id, text:str):
-     data = {"chat_id": chat_id, "text": text}
-     requests.post(API.get_URL() + "sendMessage", json=data)               
-
+       
 if __name__ == '__main__':
     app.run(port=5000)
