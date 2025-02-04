@@ -12,7 +12,10 @@ Este projeto de iniciação científica tem como objetivo identificar notícias 
   - BERTimbau com Regressão Logística
 - **API do Telegram**: python-telegram-bot
 
-  ![image](https://github.com/user-attachments/assets/34491f5f-8b7b-4dce-ad92-9d4842c74088)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/34491f5f-8b7b-4dce-ad92-9d4842c74088" width="500">
+</p>
+
 
 
 
