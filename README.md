@@ -17,7 +17,7 @@ Este projeto de iniciação científica tem como objetivo identificar notícias 
 </p>
 
 ## Demonstração
-[Veja o vídeo](IC/video-ic-sem-musica-feito-com-o-clipchamp_xeJgAd9B.mp4) 
+[Veja o vídeo](video-ic-sem-musica-feito-com-o-clipchamp_xeJgAd9B.mp4) 
 
 
 
