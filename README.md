@@ -16,6 +16,8 @@ Este projeto de iniciação científica tem como objetivo identificar notícias 
   <img src="https://github.com/user-attachments/assets/34491f5f-8b7b-4dce-ad92-9d4842c74088" width="500">
 </p>
 
+## Demonstração
+[Veja o vídeo](IC/video-ic-sem-musica-feito-com-o-clipchamp_xeJgAd9B.mp4) 
 
 
 
